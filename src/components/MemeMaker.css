@@ -1,0 +1,33 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.meme {
+    border-style: solid;
+    border-color: black;
+    background-color: aqua;
+    height: 80vh;
+}
+
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 65vh;
+}
+
+.form {
+    text-align: center;
+    margin-top: 1vh;
+}
