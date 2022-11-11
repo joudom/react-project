@@ -5,12 +5,11 @@ class MemeMaker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      topText: '',
-      bottomText: '',
-      allPics: [],
+      topTxt: '',
+      bottomTxt: '',
+      allPix: [],
       randomPic: 'https://i.imgflip.com/30b1gx.jpg'
     }
-    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount = () => {
@@ -18,54 +17,55 @@ class MemeMaker extends React.Component {
       .then(response => response.json())
       .then(picJson => {
         const { memes } = picJson.data
-        this.setState({ allPics: memes }, () => {
-          console.log('new pic loaded');
-        });
+        this.setState({ allPix: memes });
       });
     }
 
-  _updateField = (key, val) => {
-    this.setState({ [key]: val }, () => {
-      console.log(`${key} = ${val}`) ;
+  handleClick = (e) => {
+    e.preventDefault()
+    const randomInd = Math.floor(Math.random() * this.state.allPix.length)
+    const randomMeme = this.state.allPix[randomInd].url
+    this.setState({ randomPic: randomMeme }, () => {
+      console.log('New Pic Loaded');
     });
   }
 
-  handleClick = (e) => {
-    e.preventDefault()
-    const randomInd = Math.floor(Math.random() * this.state.allPics.length)
-    const randomMeme = this.state.allPics[randomInd].url
-    this.setState({ randomPic: randomMeme })
+  _updateField = (field, val) => {
+    this.setState({ [field]: val }, () => {
+      console.log(`${field} = ${val}`) ;
+    });
   }
 
   render() {
     return (
       <div className='row'>
-        <div className='column'>
-          <div className='meme'>
-              <h2 className="top">{this.state.topText}</h2>
+        <div className='leftBox column'>Left Side</div>
+          <div className='midBox column'>
+            <div className='meme'>
+              <h2 className="topTxt">{this.state.topTxt}</h2>
               <img src={this.state.randomPic} alt="" className='img'/>
-              <h2 className="bottom">{this.state.bottomText}</h2>
-          </div>
-            <form className='form'>
+              <h2 className="bottomTxt">{this.state.bottomTxt}</h2>
+            </div>
+            <form className='form' onSubmit={this._submitForm}>
               <button onClick={this.handleClick}>New Pic</button>
               <input 
-                type="text" 
-                name='topText'
+                type="type" 
                 placeholder='Top Text' 
-                defaultValue={this.state.topText} 
-                onChange={(event) => {
-                  this._updateField('Top Text', event.target.value)
+                value={this.state.topTxt} 
+                onChange={(e) => {
+                  this._updateField('topTxt', e.target.value)
                 }}/>
               <input 
                 type="text" 
                 placeholder='Bottom Text' 
-                defaultValue={this.state.bottomText}
-                onChange={(event) => {
-                  this._updateField('Bottom Text', event.target.value)
+                value={this.state.bottomTxt}
+                onChange={(e) => {
+                  this._updateField('bottomTxt', e.target.value)
                 }}/>
               <input type="submit"/>
             </form>
-        </div>
+          </div>
+        <div className='rightBox column'>Right Side</div>
       </div>
     );
   }
