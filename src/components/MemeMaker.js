@@ -8,7 +8,7 @@ class MemeMaker extends React.Component {
       topTxt: '',
       bottomTxt: '',
       allPix: [],
-      randomPic: 'https://i.imgflip.com/30b1gx.jpg'
+      randomPic: 'https://i.imgflip.com/c2qn.jpg'
     }
   }
 
@@ -39,7 +39,7 @@ class MemeMaker extends React.Component {
   render() {
     return (
       <div className='row'>
-        <div className='leftBox column'>Left Side</div>
+        <div className='leftBox column'></div>
           <div className='midBox column'>
             <div className='meme'>
               <h2 className="topTxt">{this.state.topTxt}</h2>
@@ -47,7 +47,7 @@ class MemeMaker extends React.Component {
               <h2 className="bottomTxt">{this.state.bottomTxt}</h2>
             </div>
             <form className='form' onSubmit={this._submitForm}>
-              <button onClick={this.handleClick}>New Pic</button>
+              <button className="button" onClick={this.handleClick}>New Pic</button>
               <input 
                 type="type" 
                 placeholder='Top Text' 
@@ -62,10 +62,10 @@ class MemeMaker extends React.Component {
                 onChange={(e) => {
                   this._updateField('bottomTxt', e.target.value)
                 }}/>
-              <input type="submit"/>
+              <input className="button" type="submit"/>
             </form>
           </div>
-        <div className='rightBox column'>Right Side</div>
+        <div className='rightBox column'></div>
       </div>
     );
   }
