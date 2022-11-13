@@ -1,7 +1,7 @@
 import React from 'react';
-import './MemeMaker.css';
+import './Lab.css';
 
-class MemeMaker extends React.Component {
+class Lab extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -71,4 +71,4 @@ class MemeMaker extends React.Component {
   }
 }
 
-export default MemeMaker;
+export default Lab;

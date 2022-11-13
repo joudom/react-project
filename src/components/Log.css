@@ -12,11 +12,9 @@
     flex: 1;
 }
 
-.history {
+.log {
     border-style: solid;
-    border-right: none;
     border-color: black;
-    background-color:darkorchid;
-    height: 50vh;
-    margin-left: 30vh;
+    background-color:whitesmoke;
+    height: 80.5vh;
 }

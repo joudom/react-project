@@ -7,46 +7,37 @@ body {
     margin: 0;
 }
 
-img {
-    width: auto;
-    height: 5rem;
-}
-
-.home {
-    font-size: 1.5vw;
-}
-
-.nav {
-    color: black;
+a {
+    text-decoration: none;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
-    gap: 2rem;
-    padding: 0 10rem;
 }
 
-.nav ul {
+.logo {
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+ul {
     padding: 0;
     margin: 0;
     list-style: none;
     display: flex;
-    gap: 3rem;
-    font-size: 1vw;
+    gap: 1rem;
 }
 
-.nav a {
-    color: inherit;
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: .25rem;
+img {
+    width: 3.5vw;
+    height: 4rem;
 }
 
-.nav li.active {
-    background-color: rgb(221, 218, 218);
+a.active {
+    background-color:lightpink;
 }
 
-.nav li:hover, a:hover {
+a:hover {
     background-color: #777;
 }

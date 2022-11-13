@@ -1,0 +1,59 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.home {
+    border-style: solid;
+    border-color: black;
+    background-color:whitesmoke;
+    height: 84vh;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact;
+    font-size: 3vw;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0px 2px 0 #000,
+    2px 0px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 2px 5px #000;
+}
+
+h3 {
+    text-align: center;
+    margin: 150px 0;
+    padding: 0 5px;
+    font-family: impact;
+    font-size: 1vw;
+}
+
+p {
+    text-align: center;
+    margin: 15px 0;
+    padding: 0 5px;
+    font-size: 1vw;
+}
+
+.btn-container {
+    text-align: center;
+}
