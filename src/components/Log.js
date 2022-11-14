@@ -6,7 +6,9 @@ class Log extends React.Component {
         return (
          <div className='row'>
             <div className='column'>
-              <h1 className='log'>your log</h1>
+              <div className='log'>
+                <h1>your log</h1>
+              </div>
             </div>
           </div>
         );
