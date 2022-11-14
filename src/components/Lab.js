@@ -8,7 +8,8 @@ class Lab extends React.Component {
       topTxt: '',
       bottomTxt: '',
       allPix: [],
-      randomPic: 'https://i.imgflip.com/c2qn.jpg'
+      randomPic: 'https://i.imgflip.com/c2qn.jpg',
+      savedPic: ''
     }
   }
 
@@ -36,6 +37,13 @@ class Lab extends React.Component {
     });
   }
 
+  handleFormSubmit = () => {
+    const { topTxt, bottomTxt, savedPic } = this.state;
+    localStorage.setItem('topTxt', topTxt);
+    localStorage.setItem('bottomTxt', bottomTxt);
+    localStorage.setItem('savedPic', JSON.stringify(savedPic));
+  }
+
   render() {
     return (
       <div className='row'>
@@ -46,7 +54,7 @@ class Lab extends React.Component {
               <img src={this.state.randomPic} alt="" className='img'/>
               <h2 className="bottomTxt">{this.state.bottomTxt}</h2>
             </div>
-            <form className='form' onSubmit={this._submitForm}>
+            <form className='form' onSubmit={this.handleFormSubmit}>
               <button className="button" onClick={this.handleClick}>New Pic</button>
               <input 
                 type="type" 
@@ -62,7 +70,7 @@ class Lab extends React.Component {
                 onChange={(e) => {
                   this._updateField('bottomTxt', e.target.value)
                 }}/>
-              <input className="button" type="submit"/>
+              <button className="button">Save</button>
             </form>
           </div>
         <div className='rightBox column'></div>

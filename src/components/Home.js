@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 class Home extends React.Component {
@@ -14,8 +15,8 @@ class Home extends React.Component {
                   Become a member in order to access your own log of saved memes!
                 </p>
                   <div className='btn-container'>
-                    <button className="button">Sign Up</button>
-                    <button className="button">Sign In</button>
+                    <Link to="/signup" className="button">Sign Up</Link>
+                    <Link to='/login' className="button">Log In</Link>
                   </div>
               </div>
             </div>
