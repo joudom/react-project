@@ -10,7 +10,7 @@ class Home extends React.Component {
               <div className='home'>
                 <h1>"say what you meme...meme what you say"</h1>
                 <h2> - memeboi </h2>
-                <h3>Where baby memes are born...be great out there kid.</h3>
+                <h3>Where baby memes are born...be great out there.</h3>
                 <p>
                   Become a member in order to access your own log of saved memes!
                 </p>

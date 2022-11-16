@@ -26,12 +26,57 @@
     padding: 10px;
   }
   
-  .grid-item {
+.grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
     font-size: 30px;
     text-align: center;
     width: 15vw;
+    height: 19vh;
+}
+
+.memeBox {
+    padding: 0;
+    margin: 0;
     height: 20vh;
-  }
+    width: 15vw;
+    position: relative;
+}
+
+.savedImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 14.9vw;
+    max-width: 14.9vw;
+    height: 19.7vh;
+}
+
+.savedBottomTxt {
+    position: relative;
+    bottom: 1.5vw;
+}
+
+h3 {
+    position: absolute; 
+    left: 0;
+    right: 0; 
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: impact;
+    font-size: 1vw;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0px 2px 0 #000,
+    2px 0px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 2px 5px #000;
+}

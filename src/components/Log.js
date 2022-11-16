@@ -2,12 +2,15 @@ import React from 'react';
 import './Log.css';
 
 class Log extends React.Component {
-
-  myFunction() {
-    var x = sessionStorage.getItem("test1");
-    document.getElementsByClassName("log").innerHTML = x;
-  } 
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      savedTopTxt: sessionStorage.getItem('topTxt'),
+      savedBottomTxt: sessionStorage.getItem('bottomTxt'),
+      savedRandomPic: sessionStorage.getItem('randomPic')
+    }
+  }
+    
     render() {
         return (
          <div className='row'>
@@ -15,7 +18,11 @@ class Log extends React.Component {
               <div className='log'>
                 <h1>your log</h1>
                 <div className="grid-container">
-                  <div className="grid-item">1</div>
+                  <div className="grid-item memeBox">
+                    <h3 className="savedTopTxt">{this.state.savedTopTxt}</h3>
+                    <img src={this.state.savedRandomPic} alt="" className='savedImg'/>
+                    <h3 className="savedBottomTxt">{this.state.savedBottomTxt}</h3>
+                  </div>
                   <div className="grid-item">2</div>
                   <div className="grid-item">3</div>
                   <div className="grid-item">4</div>

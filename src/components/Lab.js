@@ -8,8 +8,7 @@ class Lab extends React.Component {
       topTxt: '',
       bottomTxt: '',
       allPix: [],
-      randomPic: 'https://i.imgflip.com/c2qn.jpg',
-      savedPic: ''
+      randomPic: 'https://i.imgflip.com/c2qn.jpg'
     }
   }
 
@@ -31,17 +30,34 @@ class Lab extends React.Component {
     });
   }
 
-  _updateField = (field, val) => {
-    this.setState({ [field]: val }, () => {
-      console.log(`${field} = ${val}`) ;
+  _updateTopTxt = (newTopTxt) => {
+    this.setState({ topTxt: newTopTxt }, () => {
+      console.log(`Top Text = ${newTopTxt}`) ;
     });
   }
 
-  handleFormSubmit = () => {
-    const { topTxt, bottomTxt, savedPic } = this.state;
-    localStorage.setItem('topTxt', topTxt);
-    localStorage.setItem('bottomTxt', bottomTxt);
-    localStorage.setItem('savedPic', JSON.stringify(savedPic));
+  _updateBottomTxt = (newBottomTxt) => {
+    this.setState({ bottomTxt: newBottomTxt }, () => {
+      console.log(`Bottom Text = ${newBottomTxt}`) ;
+    });
+  }
+
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    const { topTxt, bottomTxt, randomPic } = this.state;
+    sessionStorage.setItem('topTxt', topTxt);
+    sessionStorage.setItem('bottomTxt', bottomTxt);
+    sessionStorage.setItem('randomPic', randomPic);
+    // let topTxt = document.getElementsByClassName('topTxt').value;
+    // let randomPic = document.getElementsByClassName('img').value;
+    // let bottomTxt = document.getElementsByClassName('bottomTxt').value;
+
+    // const meme = {
+    //   topTxt: topTxt,
+    //   img: randomPic,
+    //   bottomTxt: bottomTxt
+    // }
+    // sessionStorage.setItem(meme, JSON.stringify(meme));
   }
 
   render() {
@@ -61,14 +77,16 @@ class Lab extends React.Component {
                 placeholder='Top Text' 
                 value={this.state.topTxt} 
                 onChange={(e) => {
-                  this._updateField('topTxt', e.target.value)
+                  console.log(e.target.value);
+                  this._updateTopTxt(e.target.value)
                 }}/>
               <input 
                 type="text" 
                 placeholder='Bottom Text' 
                 value={this.state.bottomTxt}
                 onChange={(e) => {
-                  this._updateField('bottomTxt', e.target.value)
+                  console.log(e.target.value);
+                  this._updateBottomTxt(e.target.value)
                 }}/>
               <button className="button">Save</button>
             </form>
