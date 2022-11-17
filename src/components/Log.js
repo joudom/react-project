@@ -19,9 +19,9 @@ class Log extends React.Component {
                 <h1>your log</h1>
                 <div className="grid-container">
                   <div className="grid-item memeBox">
-                    <h3 className="savedTopTxt">{this.state.savedTopTxt}</h3>
+                    <h4 className="savedTopTxt">{this.state.savedTopTxt}</h4>
                     <img src={this.state.savedRandomPic} alt="" className='savedImg'/>
-                    <h3 className="savedBottomTxt">{this.state.savedBottomTxt}</h3>
+                    <h4 className="savedBottomTxt">{this.state.savedBottomTxt}</h4>
                   </div>
                   <div className="grid-item">2</div>
                   <div className="grid-item">3</div>

@@ -48,11 +48,13 @@ class Lab extends React.Component {
     sessionStorage.setItem('topTxt', topTxt);
     sessionStorage.setItem('bottomTxt', bottomTxt);
     sessionStorage.setItem('randomPic', randomPic);
-    // let topTxt = document.getElementsByClassName('topTxt').value;
-    // let randomPic = document.getElementsByClassName('img').value;
-    // let bottomTxt = document.getElementsByClassName('bottomTxt').value;
 
-    // const meme = {
+    // const memeArray = [];
+    // for (let i = 0; i < meme.length; i++) {
+    //   memeArray.push(meme[i]);
+    // }
+
+    // const memeObj = {
     //   topTxt: topTxt,
     //   img: randomPic,
     //   bottomTxt: bottomTxt
