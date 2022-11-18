@@ -44,22 +44,28 @@ class Lab extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
+    const items = JSON.parse(sessionStorage.getItem('meme'));
     const { topTxt, bottomTxt, randomPic } = this.state;
-    sessionStorage.setItem('topTxt', topTxt);
-    sessionStorage.setItem('bottomTxt', bottomTxt);
-    sessionStorage.setItem('randomPic', randomPic);
+    const memeObj = {
+      topTxt: topTxt,
+      img: randomPic,
+      bottomTxt: bottomTxt
+    }
+      if (items) {
+        sessionStorage.setItem('meme', JSON.stringify([...items, memeObj]));
+      }  else {
+        sessionStorage.setItem('meme', JSON.stringify([memeObj]));
+      }
+
+    // sessionStorage.setItem('topTxt', topTxt);
+    // sessionStorage.setItem('bottomTxt', bottomTxt);
+    // sessionStorage.setItem('randomPic', randomPic);
 
     // const memeArray = [];
     // for (let i = 0; i < meme.length; i++) {
     //   memeArray.push(meme[i]);
     // }
-
-    // const memeObj = {
-    //   topTxt: topTxt,
-    //   img: randomPic,
-    //   bottomTxt: bottomTxt
-    // }
-    // sessionStorage.setItem(meme, JSON.stringify(meme));
+    
   }
 
   render() {
